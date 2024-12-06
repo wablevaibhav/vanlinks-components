@@ -20,3 +20,4 @@ export "package:dropdown_search/dropdown_search.dart";
 export 'custom_multiple_selections.dart';
 export 'services/validations.dart';
 export 'linear_gradient_colors.dart';
+export 'custom_dropdown.dart';
