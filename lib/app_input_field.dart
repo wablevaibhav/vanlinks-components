@@ -87,6 +87,7 @@ class _AppInputFieldState extends State<AppInputField> {
             shadowColor: widget.shadowColor ?? VanlinksColors.blackColor,
             borderRadius: BorderRadius.circular(widget.radius ?? 30),
             child: TextFormField(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               onTap: widget.onTap,
               onFieldSubmitted: widget.onFieldSubmitted,
               onTapOutside: (event) {
@@ -154,12 +155,12 @@ class _AppInputFieldState extends State<AppInputField> {
                       )
                     : null,
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(widget.radius ?? 30),
                   borderSide:
                       const BorderSide(color: Colors.black, width: 0.43),
                 ),
                 errorBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(widget.radius ?? 30),
                   borderSide: const BorderSide(
                       color: VanlinksColors.redColor, width: 0.43),
                 ),
