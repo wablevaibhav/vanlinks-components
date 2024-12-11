@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:vanlinks_components/vanlinks_components.dart';
 
 enum VanlinksAlertStyle {
   success,
@@ -12,52 +12,52 @@ extension VanlinksAlertStyleColorExtension on VanlinksAlertStyle {
   Color textColor() {
     switch (this) {
       case VanlinksAlertStyle.success:
-        return const Color(0xFF186429);
+        return VanlinksColors.greenColor;
       case VanlinksAlertStyle.info:
-        return const Color(0xFF0E616E);
+        return VanlinksColors.blueColor;
       case VanlinksAlertStyle.warning:
-        return const Color(0xFF997404);
+        return VanlinksColors.warningColor;
       case VanlinksAlertStyle.danger:
-        return const Color(0xFF842029);
+        return VanlinksColors.redColor;
     }
   }
 
   Color backgroundColor() {
     switch (this) {
       case VanlinksAlertStyle.success:
-        return const Color(0xFFD4EDDA);
+        return VanlinksColors.greenColor.withOpacity(0.1);
       case VanlinksAlertStyle.info:
-        return const Color(0xFFD1ECF1);
+        return VanlinksColors.blueColor.withOpacity(0.1);
       case VanlinksAlertStyle.warning:
-        return const Color(0xFFFFF3CD);
+        return VanlinksColors.warningColor.withOpacity(0.1);
       case VanlinksAlertStyle.danger:
-        return const Color(0xFFF8D7DA);
+        return VanlinksColors.redColor.withOpacity(0.1);
     }
   }
 
   Color iconColor() {
     switch (this) {
       case VanlinksAlertStyle.success:
-        return const Color(0xFF186429);
+        return VanlinksColors.greenColor;
       case VanlinksAlertStyle.info:
-        return const Color(0xFF0E616E);
+        return VanlinksColors.blueColor;
       case VanlinksAlertStyle.warning:
-        return const Color(0xFF997404);
+        return VanlinksColors.warningColor;
       case VanlinksAlertStyle.danger:
-        return const Color(0xFF842029);
+        return VanlinksColors.redColor;
     }
   }
 
   IconData iconData() {
     switch (this) {
       case VanlinksAlertStyle.success:
-        return Icons.check_circle_outline;
+        return VanlinksIcons.success.icon!;
       case VanlinksAlertStyle.info:
-        return Icons.info;
+        return VanlinksIcons.info.icon!;
       case VanlinksAlertStyle.warning:
-        return Icons.priority_high;
+        return VanlinksIcons.warning.icon!;
       case VanlinksAlertStyle.danger:
-        return Icons.priority_high;
+        return VanlinksIcons.errorCircle.icon!;
     }
   }
 }
@@ -96,11 +96,12 @@ class VanLinkAlert extends StatelessWidget {
       this.maxWidth = double.infinity,
       TextStyle? titleTextStyle,
       TextStyle? messageTextStyle})
-      : titleColor = titleColor ?? Colors.grey.shade900,
-        messageColor = messageColor ?? Colors.grey.shade900,
-        titleTextStyle = titleTextStyle ?? const TextStyle(fontSize: 16),
+      : titleColor = titleColor ?? VanlinksColors.darkGray,
+        messageColor = messageColor ?? VanlinksColors.mediumGray,
+        titleTextStyle = titleTextStyle ?? VanlinksTextStyle.regularTextStyle,
         messageTextStyle = messageTextStyle ??
-            const TextStyle(fontSize: 16, fontWeight: FontWeight.w200);
+            VanlinksTextStyle.regularTextStyle
+                .copyWith(fontWeight: FontWeight.w200);
 
   factory VanLinkAlert.style(
       {required VanlinksAlertStyle style,
