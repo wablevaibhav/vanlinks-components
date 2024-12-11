@@ -2,14 +2,29 @@ import 'package:flutter/material.dart';
 
 LinearGradient linearGradientColors1() {
   return const LinearGradient(
-    begin: Alignment.topCenter,
-    end: Alignment.bottomCenter,
+    begin: Alignment(0.07, -1.00),
+    end: Alignment(-0.07, 1),
+    colors: [Color(0xFFFFDF00), Color(0xFFFFF7BE), Colors.white],
+  );
+}
+
+LinearGradient linearGradientColors2() {
+  return LinearGradient(
+    begin: const Alignment(1.00, 0.01),
+    end: const Alignment(-1, -0.01),
     colors: [
-      Color.fromRGBO(255, 225, 16, 0),
-      Color.fromRGBO(255, 228, 42, 0.5),
-      Color.fromRGBO(255, 231, 62, 0.9),
-      Color.fromRGBO(255, 223, 0, 1),
+      const Color(0xFFFFDF00),
+      const Color(0xB2FFDF00),
+      Colors.black.withOpacity(0)
     ],
-    stops: [0, 0.4, 0.8, 1.0],
+  );
+}
+
+BoxShadow boxShadowColors() {
+  return const BoxShadow(
+    color: Color(0x3F000000),
+    blurRadius: 7,
+    offset: Offset(0, 4),
+    spreadRadius: 2,
   );
 }
