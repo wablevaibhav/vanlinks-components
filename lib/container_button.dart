@@ -5,19 +5,19 @@ class ContainerButton extends StatelessWidget {
   const ContainerButton({
     super.key,
     required this.buttonText,
-    this.radius,
-    this.width,
-    this.backgroundColor,
-    this.borderColor,
+    this.radius = 5.0,
+    this.width = 83.0,
+    this.backgroundColor = VanlinksColors.blackColor,
+    this.borderColor = VanlinksColors.blackColor,
     this.textStyle,
     this.onTap,
   });
 
   final String buttonText;
-  final double? radius;
-  final double? width;
-  final Color? backgroundColor;
-  final Color? borderColor;
+  final double radius;
+  final double width;
+  final Color backgroundColor;
+  final Color borderColor;
   final TextStyle? textStyle;
   final void Function()? onTap;
 
@@ -26,12 +26,12 @@ class ContainerButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: width ?? 83,
+        width: width,
         decoration: BoxDecoration(
-          color: backgroundColor ?? VanlinksColors.blackColor,
-          borderRadius: BorderRadius.circular(radius ?? 5),
+          color: backgroundColor,
+          borderRadius: BorderRadius.circular(radius),
           border: Border.all(
-            color: borderColor ?? VanlinksColors.blackColor,
+            color: borderColor,
             width: 1,
           ),
         ),
