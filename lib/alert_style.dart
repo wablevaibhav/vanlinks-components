@@ -12,52 +12,52 @@ extension VanlinksAlertStyleColorExtension on VanlinksAlertStyle {
   Color textColor() {
     switch (this) {
       case VanlinksAlertStyle.success:
-        return VanlinksColors.greenColor;
+        return const Color(0xFF186429);
       case VanlinksAlertStyle.info:
-        return VanlinksColors.blueColor;
+        return const Color(0xFF1B489B);
       case VanlinksAlertStyle.warning:
-        return VanlinksColors.warningColor;
+        return const Color(0xFF997404);
       case VanlinksAlertStyle.danger:
-        return VanlinksColors.redColor;
+        return const Color(0xFF842029);
     }
   }
 
   Color backgroundColor() {
     switch (this) {
       case VanlinksAlertStyle.success:
-        return VanlinksColors.greenColor.withOpacity(0.1);
+        return const Color(0xFFD4EDDA);
       case VanlinksAlertStyle.info:
-        return VanlinksColors.blueColor.withOpacity(0.1);
+        return const Color(0xFFD1ECF1);
       case VanlinksAlertStyle.warning:
-        return VanlinksColors.warningColor.withOpacity(0.1);
+        return const Color(0xFFFFF3CD);
       case VanlinksAlertStyle.danger:
-        return VanlinksColors.redColor.withOpacity(0.1);
+        return const Color(0xFFF8D7DA);
     }
   }
 
   Color iconColor() {
     switch (this) {
       case VanlinksAlertStyle.success:
-        return VanlinksColors.greenColor;
+        return const Color(0xFF186429);
       case VanlinksAlertStyle.info:
-        return VanlinksColors.blueColor;
+        return const Color(0xFF0E616E);
       case VanlinksAlertStyle.warning:
-        return VanlinksColors.warningColor;
+        return const Color(0xFF997404);
       case VanlinksAlertStyle.danger:
-        return VanlinksColors.redColor;
+        return const Color(0xFF842029);
     }
   }
 
   IconData iconData() {
     switch (this) {
       case VanlinksAlertStyle.success:
-        return VanlinksIcons.success.icon!;
+        return VanlinksIcons.success;
       case VanlinksAlertStyle.info:
-        return VanlinksIcons.info.icon!;
+        return VanlinksIcons.info;
       case VanlinksAlertStyle.warning:
-        return VanlinksIcons.warning.icon!;
+        return VanlinksIcons.warning;
       case VanlinksAlertStyle.danger:
-        return VanlinksIcons.errorCircle.icon!;
+        return VanlinksIcons.warning;
     }
   }
 }
@@ -98,10 +98,8 @@ class VanLinkAlert extends StatelessWidget {
       TextStyle? messageTextStyle})
       : titleColor = titleColor ?? VanlinksColors.darkGray,
         messageColor = messageColor ?? VanlinksColors.mediumGray,
-        titleTextStyle = titleTextStyle ?? VanlinksTextStyle.regularTextStyle,
-        messageTextStyle = messageTextStyle ??
-            VanlinksTextStyle.regularTextStyle
-                .copyWith(fontWeight: FontWeight.w200);
+        titleTextStyle = titleTextStyle ?? VanlinksTextStyle.small,
+        messageTextStyle = messageTextStyle ?? VanlinksTextStyle.small;
 
   factory VanLinkAlert.style(
       {required VanlinksAlertStyle style,
@@ -154,11 +152,16 @@ class VanLinkAlert extends StatelessWidget {
                 child: RichText(
                   text: TextSpan(
                     text: "$title ",
-                    style: titleTextStyle,
+                    style: titleTextStyle.copyWith(
+                      color: titleColor,
+                      fontWeight: FontWeight.w700,
+                    ),
                     children: <TextSpan>[
                       TextSpan(
                         text: message,
-                        style: messageTextStyle,
+                        style: messageTextStyle.copyWith(
+                          color: messageColor,
+                        ),
                       ),
                     ],
                   ),
