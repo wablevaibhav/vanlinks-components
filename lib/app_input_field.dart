@@ -36,6 +36,7 @@ class AppInputField extends StatefulWidget {
     this.shadowColor = Colors.black,
     this.onFieldSubmitted,
     this.isMaterialApp = true,
+    this.autoFocus = false,
   });
 
   final TextEditingController? controller;
@@ -69,6 +70,7 @@ class AppInputField extends StatefulWidget {
   final TextStyle? hintStyle;
   final Color shadowColor;
   final bool isMaterialApp;
+  final bool autoFocus;
 
   @override
   State<AppInputField> createState() => _AppInputFieldState();
@@ -81,6 +83,7 @@ class _AppInputFieldState extends State<AppInputField> {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: widget.controller,
       focusNode: widget.focusNode,
+      autofocus: widget.autoFocus,
       onTap: widget.onTap,
       onFieldSubmitted: widget.onFieldSubmitted,
       validator: widget.validator,
