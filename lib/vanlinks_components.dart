@@ -20,4 +20,3 @@ export 'custom_dropdown.dart';
 export 'vanlinks_icons.dart';
 export 'failure_widget.dart';
 export 'empty_widget.dart';
-export 'text_extensions.dart';

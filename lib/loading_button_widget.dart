@@ -21,7 +21,7 @@ class LoadingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final TextStyle buttonTextStyle = style ??
         VanlinksTextStyle.subheadingH6.copyWith(
-          color: VanlinksColors.blueColor,
+          color: VanlinksColors.whiteColor,
         );
     final double loaderSize = UIHelpers.screenWidth(context) * 0.06;
 
@@ -42,7 +42,7 @@ class LoadingButton extends StatelessWidget {
             size: loaderSize,
           ),
           const Gap(8),
-          Text(buttonText, style: buttonTextStyle).noFontScaling(context),
+          Text(buttonText, style: buttonTextStyle),
         ],
       ),
     );
