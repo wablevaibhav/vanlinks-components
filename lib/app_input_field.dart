@@ -18,7 +18,7 @@ class AppInputField extends StatefulWidget {
     this.elevation = 0.0,
     this.maxLength,
     this.maxLines = 1,
-    this.radius = 30.0, // Default radius
+    this.radius = 30.0,
     this.minLength,
     this.onChanged,
     this.contentPadding = const EdgeInsets.symmetric(horizontal: 16.0),
@@ -126,8 +126,7 @@ class _AppInputFieldState extends State<AppInputField> {
       inputFormatters.add(FilteringTextInputFormatter.digitsOnly);
     }
 
-    if (widget.textInputType ==
-        const TextInputType.numberWithOptions(decimal: true)) {
+    if (widget.textInputType == const TextInputType.numberWithOptions(decimal: true)) {
       inputFormatters.add(FilteringTextInputFormatter.allow(RegExp(r"[0-9.]")));
       inputFormatters.add(TextInputFormatter.withFunction((oldValue, newValue) {
         try {
@@ -168,7 +167,10 @@ class _AppInputFieldState extends State<AppInputField> {
       errorBorder: _buildBorder(VanlinksColors.redColor),
       disabledBorder: _buildBorder(Colors.grey),
       labelStyle: widget.labelStyle ?? VanlinksTextStyle.subheadingH6,
-      hintStyle: widget.hintStyle ?? VanlinksTextStyle.small,
+      hintStyle: widget.hintStyle ??
+          VanlinksTextStyle.mediumHint.copyWith(
+            color: Colors.grey.shade400,
+          ),
     );
   }
 

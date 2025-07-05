@@ -9,11 +9,11 @@ class CustomButton extends StatelessWidget {
     this.borderColor,
     required this.child,
     this.iconData,
-    this.iconColor = Colors.white, // Default color for icon
+    this.iconColor = Colors.white,
     this.width,
-    this.height = 57.0, // Default height
-    this.radius = 5.0, // Default radius
-    this.elevation = 5.0, // Default elevation
+    this.height = 57.0,
+    this.radius = 5.0,
+    this.elevation = 5.0,
   });
 
   final void Function()? onPressed;
@@ -50,7 +50,7 @@ class CustomButton extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(iconData, color: iconColor),
-                const SizedBox(width: 8), // Spacing between icon and child
+                const SizedBox(width: 8),
                 child,
               ],
             )

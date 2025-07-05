@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 class VanlinksTextStyle {
   VanlinksTextStyle._();
 
-  // **Base Variables**
   static const String _fontFamily = 'Roboto';
   static final Color _fontColor = Colors.grey.shade900;
   static final Color _fontHintColor = Colors.grey.shade700;
   static const FontWeight _fontWeight = FontWeight.normal;
 
-  // **Base Styles**
   static final TextStyle _baseTextStyle = TextStyle(
     fontFamily: _fontFamily,
     color: _fontColor,
@@ -22,7 +20,6 @@ class VanlinksTextStyle {
     fontWeight: _fontWeight,
   );
 
-  // **Headings**
   static final TextStyle headingH1 = _baseTextStyle.copyWith(
     fontSize: 48.0,
     letterSpacing: 0.42,
@@ -59,7 +56,6 @@ class VanlinksTextStyle {
     height: 20.0 / 16.0,
   );
 
-  // **Body / Normal Text**
   static final TextStyle normal = _baseTextStyle.copyWith(
     fontSize: 18.0,
     letterSpacing: 0.24,

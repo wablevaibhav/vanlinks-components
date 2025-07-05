@@ -59,17 +59,14 @@ class CustomMultipleSelections extends StatelessWidget {
           onChanged: onChanged,
           popupProps: isMenu == true
               ? PopupPropsMultiSelection.menu(
-                  listViewProps: const ListViewProps(
-                      dragStartBehavior: DragStartBehavior.down),
+                  listViewProps: const ListViewProps(dragStartBehavior: DragStartBehavior.down),
                   loadingBuilder: (context, searchEntry) {
                     return const Center(
                       child: CircularProgressIndicator(),
                     );
                   },
                   errorBuilder: (context, searchEntry, exception) {
-                    return const Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Text("Something went wrong"));
+                    return const Padding(padding: EdgeInsets.all(12.0), child: Text("Something went wrong"));
                   },
                   emptyBuilder: (context, searchEntry) {
                     return Padding(
@@ -80,19 +77,15 @@ class CustomMultipleSelections extends StatelessWidget {
                   fit: FlexFit.loose,
                   showSearchBox: showSearchBox)
               : PopupPropsMultiSelection.dialog(
-                  dialogProps: const DialogProps(
-                      backgroundColor: VanlinksColors.whiteColor, elevation: 8),
-                  listViewProps: const ListViewProps(
-                      dragStartBehavior: DragStartBehavior.down),
+                  dialogProps: const DialogProps(backgroundColor: VanlinksColors.whiteColor, elevation: 8),
+                  listViewProps: const ListViewProps(dragStartBehavior: DragStartBehavior.down),
                   loadingBuilder: (context, searchEntry) {
                     return const Center(
                       child: CircularProgressIndicator(),
                     );
                   },
                   errorBuilder: (context, searchEntry, exception) {
-                    return const Padding(
-                        padding: EdgeInsets.all(12.0),
-                        child: Text("Something went wrong!!"));
+                    return const Padding(padding: EdgeInsets.all(12.0), child: Text("Something went wrong!!"));
                   },
                   emptyBuilder: (context, searchEntry) {
                     return const Padding(
@@ -110,16 +103,14 @@ class CustomMultipleSelections extends StatelessWidget {
               labelStyle: labelStyle ?? VanlinksTextStyle.subheadingH6,
               contentPadding: const EdgeInsets.fromLTRB(8, 6, 8, 6),
               hintText: hintText ?? "Select",
-              hintStyle: VanlinksTextStyle.mediumHint
-                  .copyWith(color: Colors.grey.shade400),
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
-              focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: VanlinksColors.blackColor)),
+              hintStyle: VanlinksTextStyle.mediumHint.copyWith(
+                color: Colors.grey.shade400,
+              ),
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+              focusedBorder: const OutlineInputBorder(borderSide: BorderSide(color: VanlinksColors.blackColor)),
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: const BorderSide(
-                      color: VanlinksColors.blackColor, width: 1)),
+                  borderSide: const BorderSide(color: VanlinksColors.blackColor, width: 1)),
             ),
           ),
           items: items,
